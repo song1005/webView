@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/1_theme_test/1_theme_test.css" rel="stylesheet">
+    <script src="/1_theme_test/BDBViewerVO.js"></script>
+    <script src="/1_theme_test/BDBViewHolder.js"></script>
+    
+</head>
+<body>
+    <label>텍스트 테스트</label>
+
+    <div id="button_group" >
+        <ul>
+            <li data-click="">origin</li>
+            <li>white</li>
+            <li>yellow1</li>
+            <li>black</li>
+            <li>blue</li>
+            <li>gray</li>
+            <li>yellow2</li>
+            <li><a href="#">brown</a></li>
+        </ul>
+    </div>
+   <div>
+        <svg width="24" height="23" viewBox="0 0 24 23" fill="red">
+            <use xlink:href="#svg_list" />
+        </svg>
+   </div>
+
+
+<svg>
+    <defs>
+        <g class="svg_initem" id="svg_list">
+            <path d="M0 0H33V33H0z" class="svg_hitbg" />
+            <g class="cls-1">
+                <circle cx="2.5" cy="2.5" r="2.5" class="cls-3" />
+                <circle cx="2.5" cy="2.5" r="2" class="cls-4" />
+            </g>
+            <g class="cls-1" transform="translate(0 9)">
+                <circle cx="2.5" cy="2.5" r="2.5" class="cls-3" />
+                <circle cx="2.5" cy="2.5" r="2" class="cls-4" />
+            </g>
+            <g class="cls-1" transform="translate(0 18)">
+                <circle cx="2.5" cy="2.5" r="2.5" class="cls-3" />
+                <circle cx="2.5" cy="2.5" r="2" class="cls-4" />
+            </g>
+            <path d="M0 0H17.111V1.833H0z" class="cls-2" transform="translate(6.722 1.589)" />
+            <path d="M0 0H17.111V1.833H0z" class="cls-2" transform="translate(6.722 10.583)" />
+            <path d="M0 0H17.111V1.833H0z" class="cls-2" transform="translate(6.722 19.7)" />
+        </g>
+        <g id="svg_view01_active">
+            <g transform="translate(-1437 -106) translate(1437 106)" class="cls-1">
+                <rect width="21" height="25" stroke="none" rx="1.6"/>
+                <rect width="19.4" height="23.4" x=".8" y=".8" fill="none" rx=".8"/>
+            </g>
+            <text transform="translate(-1437 -106) translate(1447.5 125)" class="cls-2">
+                <tspan x="-4.88" y="-1">1</tspan>
+            </text>
+        </g>
+        <g id="svg_view01_cloud">
+            <g transform="translate(-1437 -106) translate(1437 106)" class="cls-1">
+                <rect width="21" height="25" stroke="none" rx="1.6"/>
+                <rect width="19.4" height="23.4" x=".8" y=".8" fill="none" rx=".8"/>
+            </g>
+            <text transform="translate(-1437 -106) translate(1447.5 125)" class="cls-2">
+                <tspan x="-4.88" y="-1">1</tspan>
+            </text>
+        </g>
+    </defs>
+</svg>
+
+</body>
+
+<script>
+
+
+
+
+    var themeList = [
+        new ThemeColor("origin",null,null),
+        new ThemeColor("white","#FFFFFF","#000000"),
+        new ThemeColor("yellow1","#F9F5DA","#000000"),
+        new ThemeColor("dark","#555555","#FFFFFF"),
+        new ThemeColor("blue","#7AD1FA","#000000"),
+        new ThemeColor("gray","#F0F0F0","#000000"),
+        new ThemeColor("yellow2","#F9F5DA","#000000"),
+        new ThemeColor("brown","#9C6A35","#000000")
+    ]
+
+    const groupBtn = document.querySelector('#button_group').querySelectorAll('li')
+    groupBtn.forEach((e,i)=> e.addEventListener('click',changeTheme.bind(this,i)))
+    function changeTheme(i,e){
+        document.documentElement.setAttribute("data-theme", themeList[i].name);
+    }
+</script>
+</html>
